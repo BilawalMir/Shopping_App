@@ -17,6 +17,13 @@ class _GroceryListState extends State<GroceryList> {
   List<GroceryItem> _groceryItems = [];
   var _isLoading = true;
   String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadItems();
+  }
+
   void _loadItems() async {
     final url = Uri.https(
       "flutter-prep-a83d9-default-rtdb.firebaseio.com",
